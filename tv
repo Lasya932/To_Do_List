@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presenting you</title>
+    <h1>SAMSUNG QLED</h1>
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        /* --- Custom CSS for scroll animations --- */
+        .scroll-animate {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 1s ease-out, opacity 1s ease-out;
+        }
+
+        .scroll-animate.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1.5s ease-in;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+        }
+
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Hero Section -->
+    <header id="hero" class="relative min-h-screen flex flex-col items-center justify-center text-center">
+        <canvas id="hero-canvas"></canvas>
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="relative z-10 px-6 py-20 lg:py-40">
+            <h1 class="text-3xl sm:text-5xl lg:text-7xl font-bold mb-4 text-white fade-in">Samsung-QLED</h1>
+            <p class="text-xl sm:text-2xl text-gray-300 max-w-2xl mx-auto fade-in" style="transition-delay: 0.5s;">
+                Brilliant colors, dazzling brightness, and a viewing experience that lasts a lifetime.
+            </p>
+            <div class="mt-9 flex justify-center">
+                <label for="image-upload" class="cursor-pointer px-6 py-3 bg-white text-gray-900 rounded-full font-semibold hover:bg-gray-200 transition-colors">
+                <img src="https://images.samsung.com/is/image/samsung/p6pim/in/qa55q60daulxl/gallery/in-qled-q60d-qa55q60daulxl-539976106?$684_547_PNG$" alt="samsung tv" width="500" height="600">
+            
+                </label>
+                <input type="file" id="image-upload" accept="image/*" class="hidden">
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16">
+
+        <!-- About Me Section -->
+        <section id="about" class="py-16 scroll-animate">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-semibold leading-tight text-white">About TV</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        "Samsung QLED TVs deliver stunning picture quality with vibrant colors and exceptional brightness. Their Quantum Dot technology ensures lifelike visuals and wide color accuracy. With low burn-in risk and smart features, they offer a long-lasting and immersive viewing experience."
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        "Samsung QLED TVs use Quantum Dot technology, where tiny semiconductor particles emit precise colors when hit by light. This layer sits on top of an LED backlight, enhancing brightness, color accuracy, and contrast. The TV’s smart processing then optimizes the picture, making images sharp, vibrant, and realistic for all kinds of content.
+                    </p>
+                    <a href="#contact" class="inline-block mt-4 px-5 py-3 bg-gray-800 text-white rounded-full font-semibold hover:bg-gray-700 transition-colors">
+                        Get in Touch
+                    </a>
+                </div>
+                <div class="flex justify-center md:justify-end">
+                    <img src="https://images.samsung.com/is/image/samsung/assets/levant/tvs/tv-buying-guide/best-picture-quality-tv/2023-tv-buying-guide-the-best-tv-picture-quality-f01-1-mo.jpg?$FB_TYPE_J_F_MO_JPG$" alt="Jane Doe" class="rounded-2x4 shadow-lg w-full max-sm" width="500" height ="500">
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Comparison Section -->
+        <section id="technical-comparison" class="py-16 scroll-animate">
+            <h2 class="text-center text-3xl sm:text-4xl font-semibold mb-12 text-white">Technical Comparison: Samsung QLED vs. OLED</h2>
+            <div class="overflow-x-auto rounded-xl">
+                <table class="w-full text-left bg-gray-800 rounded-xl">
+                    <thead class="bg-gray-700">
+                        <tr>
+                            <th class="px-6 py-3 text-white font-medium">Feature</th>
+                            <th class="px-6 py-3 text-white font-medium">Samsung QLED</th>
+                            <th class="px-6 py-3 text-white font-medium">OLED</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-400 divide-y divide-gray-700">
+                        <tr>
+                            <td class="px-6 py-4">Brightness</td>
+                            <td class="px-6 py-4">High</td>
+                            <td class="px-6 py-4">Moderate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4">Color Accuracy</td>
+                            <td class="px-6 py-4">Excellent</td>
+                            <td class="px-6 py-4">Excellent</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4">Burn-In Risk</td>
+                            <td class="px-6 py-4">Low</td>
+                            <td class="px-6 py-4">High</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4">Contrast</td>
+                            <td class="px-6 py-4">Good (with FALD/Mini LED)</td>
+                            <td class="px-6 py-4">Excellent</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4">Price</td>
+                            <td class="px-6 py-4">Moderate</td>
+                            <td class="px-6 py-4">High</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4">Lifespan</td>
+                            <td class="px-6 py-4">Long</td>
+                            <td class="px-6 py-4">Moderate</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-16 scroll-animate">
+            <h2 class="text-center text-3xl sm:text-4xl font-semibold mb-12 text-white">FEATURES</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Portfolio Item 1 -->
+                <div class="bg-gray-800 rounded-x2 overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-400">
+                    <img src="https://rukminim2.flixcart.com/image/704/844/xif0q/television/g/c/h/-original-imah4h8yhusmwpqy.jpeg?q=90&crop=false" alt="samsung tv1" width="500" height="400">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Visuals</h3>
+                        <p class="text-gray-400 text-sm">"Samsung QLED TVs bring visuals to life with vibrant and accurate colors, as seen in the deep greens and rich blues on display. The Quantum Dot technology enhances every shade, making even subtle details pop.</p>
+                    </div>
+                </div>
+                <!-- Portfolio Item 2 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-5xl transition-shadow duration-500">
+                    <img src="https://img-prd-pim.poorvika.com/product/samsung-qled-4k-ultra-hd-smart-tv-q7f-55-inch-Right-View.png" alt="Show Title 2" class="w-full h-48 object-cover">
+                    <div class="p-7">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Volume</h3>
+                        <p class="text-gray-400 text-sm">The Samsung QLED TV delivers stunning visuals with vibrant colors and deep contrasts, as seen in the crisp, flowing water and textured ice in the image. Its Quantum Dot technology ensures every scene is rich, bright, and lifelike, bringing even the smallest details to life. Perfect for immersive viewing, it transforms your living room into a cinematic experience.
+</p>
+                    </div>
+                </div>
+                <!-- Portfolio Item 3 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://images.samsung.com/is/image/samsung/assets/sj_design/How-to-use-Multi-View-0.png?$ORIGIN_PNG$" alt="Show Title 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Dual screen mechanisum</h3>
+                        <p class="text-gray-400 text-sm">The Samsung QLED TV using its Dual Screen (Multi View) feature, allowing users to watch multiple contents at once—like videos, live TV, and a mirrored smartphone screen—all on one display. It’s perfect for multitasking, combining entertainment and productivity with ease.
+.</p>
+                    </div>
+                </div>
+                <!-- Portfolio Item 4 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://images.samsung.com/is/image/samsung/p6pim/in/qa65q70daulxl/gallery/in-qled-q70d-qa65q70daulxl-539990480?$684_547_PNG$" alt="Show Title 4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">3D Features</h3>
+                        <p class="text-gray-400 text-sm">Samsung QLED TVs with 3D technology offer an immersive viewing experience by bringing depth and realism to your favorite movies and shows. With vibrant QLED color and advanced 3D processing, every scene comes to life with stunning clarity and detail.
+.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://manuals.plus/wp-content/uploads/2021/06/SAMSUNG-Smart-TV-QLED-User-Manual-Warning-Important-Safety-Instructions.jpg" alt="Show Title 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Cautions...</h3>
+                        <p class="text-gray-400 text-sm">When using a Samsung QLED TV, ensure proper ventilation, avoid prolonged static images to prevent screen burn-in, and keep it away from moisture. Always use a stable setup and original power accessories for safety. Regular software updates help maintain optimal performance.
+</p>
+                    </div>
+                </div>
+                <!-- Portfolio Item 4 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://i.ytimg.com/vi/CHSKynoAk3M/maxresdefault.jpg" alt="Show Title 4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Quantum technology</h3>
+                        <p class="text-gray-400 text-sm">Samsung QLED TVs use **Quantum Dot technology**, inspired by principles of quantum mechanics, to deliver vibrant colors and enhanced brightness. These quantum dots emit precise colors when hit by light, resulting in a more lifelike and immersive viewing experience.
+.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <div class="mt-8 flex justify-center">
+                <label for="image-upload" class="cursor-pointer px-6 py-3 bg-white text-gray-900 rounded-full font-semibold hover:bg-gray-200 transition-colors">
+                <img src="https://img.global.news.samsung.com/global/wp-content/uploads/2011/09/SamsungTV%EB%B6%84%ED%95%B4%EC%9D%B4%EB%AF%B8%EC%A7%80_main6.jpg" alt="samsung tv"width="400"height="400">
+            </div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 scroll-animate">
+            <div class="bg-gray-800 rounded-3xl p-12 text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-semibold mb-4 text-white">Let's Connect</h2>
+                <p class="text-gray-400 mb-8 max-w-lg mx-auto">
+                    Whether you're interested in a collaboration, an interview, or just want to say hello, I would love to hear from you.
+                </p>
+                <a href="mailto:johndoe@example.com" class="inline-block px-8 py-4 bg-white text-gray-900 rounded-full font-bold text-lg hover:bg-gray-200 transition-colors">
+                    Send an Email
+                </a>
+            </div>
+        </section>
+        
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-gray-500 text-sm border-t border-gray-800 mt-16">
+        <p>&copy; Samsung QLED TV</p>
+    </footer>
+
+    <!-- JavaScript for scroll animations and hero canvas -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scroll animation logic
+            const sections = document.querySelectorAll('.scroll-animate');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Fade-in animation for hero section
+            const heroElements = document.querySelectorAll('.fade-in');
+            heroElements.forEach(el => {
+                el.classList.add('visible');
+            });
+
+            // Hero Canvas Logic
+            const canvas = document.getElementById('hero-canvas');
+            const ctx = canvas.getContext('2d');
+            const imageUpload = document.getElementById('image-upload');
+            const mouse = { x: 0, y: 0 };
+            let particles = [];
+            const pixelSize = 5;
+
+            // Set up canvas size and resize listener
+            function setCanvasSize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', setCanvasSize);
+            setCanvasSize();
+
+            // Handle mouse movement
+            canvas.addEventListener('mousemove', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                mouse.x = e.clientX - rect.left;
+                mouse.y = e.clientY - rect.top;
+            });
+
+            // Particle constructor
+            class Particle {
+                constructor(x, y, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.baseX = x;
+                    this.baseY = y;
+                    this.color = color;
+                    this.size = Math.random() * 2 + 1;
+                    this.density = (Math.random() * 30) + 1;
+                    this.vx = 0;
+                    this.vy = 0;
+                }
+
+                draw() {
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.closePath();
+                    ctx.fill();
+                }
+
+                update() {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    const maxDistance = 100;
+
+                    if (distance < maxDistance) {
+                        let forceDirectionX = dx / distance;
+                        let forceDirectionY = dy / distance;
+                        let force = (maxDistance - distance) / maxDistance;
+                        let directionX = forceDirectionX * force * this.density;
+                        let directionY = forceDirectionY * force * this.density;
+                        this.vx -= directionX;
+                        this.vy -= directionY;
+                    } else {
+                        if (this.x !== this.baseX) {
+                            let dx = this.x - this.baseX;
+                            this.vx -= dx / 10;
+                        }
+                        if (this.y !== this.baseY) {
+                            let dy = this.y - this.baseY;
+                            this.vy -= dy / 10;
+                        }
+                    }
+
+                    this.vx *= 0.95;
+                    this.vy *= 0.95;
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    this.draw();
+                }
+            }
+
+            // Initialization function for particles
+            function init(imageData) {
+                particles = [];
+                for (let y = 0; y < canvas.height; y += pixelSize) {
+                    for (let x = 0; x < canvas.width; x += pixelSize) {
+                        const pixelIndex = ((y * canvas.width) + x) * 4;
+                        const r = imageData.data[pixelIndex];
+                        const g = imageData.data[pixelIndex + 1];
+                        const b = imageData.data[pixelIndex + 2];
+                        const a = imageData.data[pixelIndex + 3];
+
+                        // Create a particle if the pixel is not transparent
+                        if (a > 0) {
+                            particles.push(new Particle(x, y, `rgba(${r}, ${g}, ${b}, 1)`));
+                        }
+                    }
+                }
+            }
+
+            // Animation loop
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                }
+                requestAnimationFrame(animate);
+            }
+
+            // Handle image upload
+            imageUpload.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        // Clear canvas and draw the new image
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        // Scale image to fit canvas
+                        const aspectRatio = img.width / img.height;
+                        let newWidth, newHeight;
+                        if (canvas.width / canvas.height > aspectRatio) {
+                            newWidth = canvas.height * aspectRatio;
+                            newHeight = canvas.height;
+                        } else {
+                            newWidth = canvas.width;
+                            newHeight = canvas.width / aspectRatio;
+                        }
+                        
+                        const xOffset = (canvas.width - newWidth) / 2;
+                        const yOffset = (canvas.height - newHeight) / 2;
+                        
+                        // Draw image to a temporary canvas to get pixel data
+                        const tempCanvas = document.createElement('canvas');
+                        const tempCtx = tempCanvas.getContext('2d');
+                        tempCanvas.width = canvas.width;
+                        tempCanvas.height = canvas.height;
+                        tempCtx.drawImage(img, xOffset, yOffset, newWidth, newHeight);
+
+                        const imageData = tempCtx.getImageData(0, 0, canvas.width, canvas.height);
+                        init(imageData);
+                    };
+                    img.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+
+            // Start animation loop
+            animate();
+        });
+    </script>
+
+</body>
+</html>
